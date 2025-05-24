@@ -38,8 +38,8 @@ type LoggoApp struct {
 // If fileName is empty, it will read from stdin.
 // If templateFile is provided, it will use that template for rendering.
 func NewLoggoApp(fileName, templateFile string) *LoggoApp {
-	reader := reader.MakeReader(fileName, nil)
-	app := loggo.NewLoggoApp(reader, templateFile)
+	r := reader.MakeReader(fileName, nil)
+	app := loggo.NewLoggoApp(r, templateFile)
 	return &LoggoApp{
 		app: app,
 	}

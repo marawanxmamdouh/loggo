@@ -23,7 +23,6 @@ THE SOFTWARE.
 package loggo
 
 import (
-	"fmt"
 	"runtime"
 
 	"github.com/gdamore/tcell/v2"
@@ -215,19 +214,19 @@ func (l *LogView) textViewMenuControl(tv *tview.TextView, onFocus func()) *tview
 }
 
 func (l *LogView) updateLineView() {
-	r, _ := l.table.GetSelection()
-	if r > 0 {
-		l.linesView.SetText(
-			fmt.
-				Sprintf(`[yellow::]Line [green::b]%d[yellow::-] ([green::b]%d[yellow::-] lines)`,
-					r,
-					l.globalCount))
-	} else {
-		l.linesView.SetText(
-			fmt.
-				Sprintf(`[green::b]%d[yellow::-] lines`,
-					l.globalCount))
-	}
+	//r, _ := l.table.GetSelection()
+	//if r > 0 {
+	//	l.linesView.SetText(
+	//		fmt.
+	//			Sprintf(`[yellow::]Line [green::b]%d[yellow::-] ([green::b]%d[yellow::-] lines)`,
+	//				r,
+	//				l.globalCount))
+	//} else {
+	//	l.linesView.SetText(
+	//		fmt.
+	//			Sprintf(`[green::b]%d[yellow::-] lines`,
+	//				l.globalCount))
+	//}
 	if l.isFollowing {
 		l.followingView.SetText(autoScrollOnMenu)
 	} else {
